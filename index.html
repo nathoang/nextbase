@@ -7,181 +7,377 @@
   <meta name="description" content="Công ty TNHH Dịch vụ Công nghệ NEXTBASE VIỆT NAM — Giải pháp chuyển đổi số, phát triển sản phẩm, tư vấn chiến lược số." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="/nextbase-logo-transparent.png">
-  <style>
-    :root{
-      --brand-green: #00A859; /* tông xanh lá chủ đạo giống vuiapp */
-      --bg: #ffffff;
-      --muted: #6b7280;
-      --maxw: 1100px;
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-      margin:0; background:var(--bg); color:#0f172a; -webkit-font-smoothing:antialiased;
-    }
-    .wrap{max-width:var(--maxw); margin:0 auto; padding:36px 20px}
-
-    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
-    .brand{display:flex;align-items:center;gap:14px}
-    .logo{width:56px;height:56px;display:inline-flex;align-items:center;justify-content:center}
-    .logo svg{width:48px;height:48px}
-    h1.site{font-size:18px;margin:0;font-weight:700}
-    nav a{margin-left:18px;text-decoration:none;color:var(--muted);font-weight:600}
-
-    .hero{display:grid;grid-template-columns:1fr 420px;gap:32px;align-items:center;padding:48px 0}
-    .hero h2{font-size:44px;margin:0 0 12px;line-height:1.02}
-    .hero p.lead{color:var(--muted);margin:0 0 20px}
-    .btn{display:inline-block;background:var(--brand-green);color:#fff;padding:12px 18px;border-radius:8px;text-decoration:none;font-weight:700}
-
-    .card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:28px}
-    .card{border-radius:12px;padding:20px;background:#fff;box-shadow:0 6px 18px rgba(10,12,18,0.06);border:1px solid rgba(0,0,0,0.04)}
-    .card h3{margin:0 0 8px}
-    .card p{margin:0;color:var(--muted)}
-
-    aside.panel{background:linear-gradient(180deg, rgba(0,0,0,0.02), transparent);border-radius:12px;padding:20px}
-    .badge{display:inline-block;background:var(--brand-green);color:#fff;padding:6px 10px;border-radius:999px;font-weight:700;font-size:12px}
-
-    section.services{padding:48px 0}
-    .services h3{font-size:22px}
-
-    footer{border-top:1px solid #eef2f6;padding:24px 0;color:var(--muted);font-size:14px;display:flex;justify-content:space-between;align-items:center}
-    footer a{color:var(--brand-green);text-decoration:none;font-weight:600}
-
-    /* responsive */
-    @media (max-width:900px){
-      .hero{grid-template-columns:1fr;}
-      nav{display:none}
-      .logo{width:48px;height:48px}
-      .hero h2{font-size:32px}
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <div class="brand">
+
+  <!-- HEADER -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a href="#" class="brand">
         <div class="logo" aria-hidden="true">
-          <!-- Minimal NB monogram, inline SVG -->
           <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="NEXTBASE logo">
             <defs>
               <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
-                <stop offset="0" stop-color="var(--brand-green)" stop-opacity="1"/>
+                <stop offset="0" stop-color="#00A859" stop-opacity="1"/>
                 <stop offset="1" stop-color="#007b3d" stop-opacity="1"/>
               </linearGradient>
             </defs>
             <rect width="100" height="100" rx="16" fill="white" />
-            <!-- NB interlock -->
             <path d="M14 18h14v64h-14zM30 18l26 30V18h14v54l-26-30v30H30z" fill="url(#g)" />
           </svg>
         </div>
-        <div>
-          <h1 class="site">NEXTBASE VIETNAM</h1>
-        </div>
-      </div>
-      <nav>
-        <a href="#">Dịch vụ</a>
-        <a href="#">Sản phẩm</a>
+        <span class="brand-name">NEXTBASE</span>
+      </a>
+      <nav class="main-nav" id="mainNav">
+        <a href="#services">Dịch vụ</a>
+        <a href="#journey">Hành trình</a>
+        <a href="#projects">Dự án</a>
         <a href="#contact">Liên hệ</a>
       </nav>
-    </header>
+      <div class="header-actions">
+        <a href="tel:0395503791" class="header-phone">📞 039 550 3791</a>
+        <a href="#contact" class="btn-cta-sm">Tư vấn ngay</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
 
-    <main>
-      <section class="hero">
-        <div>
-          <span class="badge">Chuyển đổi số</span>
-          <h2>Giải pháp chuyển đổi số — Thiết kế &amp; phát triển sản phẩm số</h2>
-          <p class="lead">Chúng tôi giúp doanh nghiệp chuyển hoá hoạt động bằng nền tảng số, tối ưu trải nghiệm khách hàng và tăng tốc độ tăng trưởng.</p>
-
-          <div class="card-grid" style="margin-top:18px">
-            <div class="card">
-              <h3>Tư vấn chiến lược số</h3>
-              <p>Khảo sát, xây dựng lộ trình chuyển đổi phù hợp mục tiêu &amp; nguồn lực doanh nghiệp.</p>
-            </div>
-            <div class="card">
-              <h3>Thiết kế UX/UI &amp; MVP</h3>
-              <p>Thiết kế trải nghiệm người dùng, prototype và phát triển bản MVP nhanh chóng.</p>
-            </div>
-            <div class="card">
-              <h3>Phát triển nền tảng</h3>
-              <p>Xây dựng web, mobile, hệ thống backend và tích hợp API — bảo mật &amp; mở rộng.</p>
-            </div>
-          </div>
-
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-bg-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+    </div>
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <h1>Chuyển đổi số,<br>Dẫn đầu tương lai</h1>
+        <p class="hero-lead">Giải pháp chuyển đổi số toàn diện cho doanh nghiệp — từ tư vấn chiến lược, thiết kế UX/UI, phát triển phần mềm đến tích hợp hệ thống & tối ưu hoá dữ liệu.</p>
+        <div class="hero-buttons">
+          <a href="#contact" class="btn-primary">LIÊN HỆ TƯ VẤN</a>
+          <a href="#services" class="btn-link">Khám phá dịch vụ →</a>
         </div>
+      </div>
+      <div class="hero-image">
+        <img src="hero-illustration.png" alt="Digital transformation illustration" />
+      </div>
+    </div>
+  </section>
 
-        <aside class="panel">
-          <h3 style="margin-top:0">Bắt đầu ngay</h3>
-          <p style="color:var(--muted);">Gửi yêu cầu, chúng tôi sẽ liên hệ tư vấn trong vòng 24 giờ làm việc.</p>
-          <p style="margin:14px 0"><a class="btn" href="mailto:hotro@nextdigi.tech">Liên hệ: hotro@nextdigi.tech</a></p>
-          <p style="font-size:13px;color:var(--muted);margin:0">
-  Hoặc gọi: <a href="tel:0395503791" style="color:inherit;text-decoration:none;">03955 03791</a></p>
-        </aside>
-      </section>
+  <!-- STATS -->
+  <section class="stats-section">
+    <div class="container stats-grid">
+      <div class="stat-card">
+        <div class="stat-icon">🤝</div>
+        <div class="stat-number" data-target="50">50+</div>
+        <p>Dự án đã triển khai thành công cho doanh nghiệp.</p>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">🏢</div>
+        <div class="stat-number" data-target="30">30+</div>
+        <p>Đối tác & khách hàng tin tưởng trên toàn quốc.</p>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">📍</div>
+        <div class="stat-number" data-target="5">5+</div>
+        <p>Năm kinh nghiệm trong lĩnh vực công nghệ số.</p>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">⚡</div>
+        <div class="stat-number" data-target="99">99%</div>
+        <p>Khách hàng hài lòng với chất lượng dịch vụ.</p>
+      </div>
+    </div>
+  </section>
 
-      <section class="services">
-        <div style="display:flex;gap:24px;flex-wrap:wrap;align-items:flex-start">
-          <div style="flex:1;min-width:320px">
-            <h3>Chúng tôi cung cấp</h3>
-            <p style="color:var(--muted)">Từ tư vấn chiến lược, thiết kế trải nghiệm, phát triển phần mềm đến vận hành và tối ưu hoá dữ liệu. Giải pháp của chúng tôi phù hợp với SME và doanh nghiệp lớn.</p>
+  <!-- AWARDS / HIGHLIGHTS -->
+  <section class="awards-section">
+    <div class="container">
+      <div class="awards-scroll">
+        <div class="award-card">
+          <div class="award-icon">🏆</div>
+          <h3>Đối tác công nghệ đáng tin cậy</h3>
+          <p>Được đánh giá là đối tác công nghệ hàng đầu cho SME tại Việt Nam.</p>
+        </div>
+        <div class="award-card">
+          <div class="award-icon">🌏</div>
+          <h3>Tiêu chuẩn quốc tế</h3>
+          <p>Quy trình phát triển phần mềm theo chuẩn Agile/Scrum quốc tế.</p>
+        </div>
+        <div class="award-card">
+          <div class="award-icon">🔒</div>
+          <h3>Bảo mật & An toàn</h3>
+          <p>Cam kết bảo mật dữ liệu tuyệt đối cho mọi dự án.</p>
+        </div>
+        <div class="award-card">
+          <div class="award-icon">🚀</div>
+          <h3>Triển khai nhanh chóng</h3>
+          <p>Từ ý tưởng đến sản phẩm MVP trong vòng 4-8 tuần.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-            <ul style="color:var(--muted);margin-top:12px">
-              <li>Thiết kế sản phẩm &amp; phát triển nhanh (MVP)</li>
-              <li>Tích hợp hệ thống &amp; API</li>
-              <li>Phân tích dữ liệu &amp; tự động hoá</li>
-            </ul>
+  <!-- SERVICES / JOURNEY -->
+  <section class="services-section" id="services">
+    <div class="container">
+      <div class="section-header">
+        <h2>Hành trình chuyển đổi số cùng NEXTBASE</h2>
+        <p>Từ tư vấn chiến lược đến phát triển sản phẩm số — giải pháp toàn diện phù hợp mọi quy mô doanh nghiệp.</p>
+      </div>
+      <div class="services-timeline" id="journey">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-phase">Giai đoạn 1</span>
+            <h3>Tư vấn chiến lược số</h3>
+            <p>Khảo sát hiện trạng, xây dựng lộ trình chuyển đổi phù hợp mục tiêu & nguồn lực doanh nghiệp. Đánh giá mức độ sẵn sàng số hoá.</p>
           </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-phase">Giai đoạn 2</span>
+            <h3>Thiết kế UX/UI & MVP</h3>
+            <p>Thiết kế trải nghiệm người dùng, prototype tương tác và phát triển bản MVP nhanh chóng. Kiểm thử & thu thập phản hồi.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-phase">Giai đoạn 3</span>
+            <h3>Phát triển nền tảng</h3>
+            <p>Xây dựng web, mobile, hệ thống backend và tích hợp API — bảo mật, mở rộng và tối ưu hiệu suất.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-phase">Giai đoạn 4</span>
+            <h3>Vận hành & Tối ưu hoá</h3>
+            <p>Hỗ trợ kỹ thuật liên tục, phân tích dữ liệu, tự động hoá quy trình và nâng cấp sản phẩm theo nhu cầu.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-          <div style="width:320px">
-            <div style="background:#fff;border-radius:10px;padding:18px;box-shadow:0 6px 18px rgba(10,12,18,0.06);border:1px solid rgba(0,0,0,0.04)">
-              <h4 style="margin:0 0 8px">Thông tin nhanh</h4>
-              <p style="margin:0;color:var(--muted);font-size:14px">Trụ sở: TP. HCM<br />Email: <a href="mailto:hotro@nextdigi.tech">hotro@nextdigi.tech</a></p>
+  <!-- SERVICE PILLS -->
+  <section class="pills-section">
+    <div class="container">
+      <h2 class="pills-heading">Giải pháp đa dạng — Phù hợp mọi nhu cầu</h2>
+      <div class="pills-grid">
+        <a href="#contact" class="pill">Thiết kế sản phẩm & MVP</a>
+        <a href="#contact" class="pill">Phát triển Web & Mobile</a>
+        <a href="#contact" class="pill">Tích hợp hệ thống & API</a>
+        <a href="#contact" class="pill">Phân tích dữ liệu & BI</a>
+        <a href="#contact" class="pill">Tự động hoá quy trình</a>
+        <a href="#contact" class="pill">Tư vấn chuyển đổi số</a>
+      </div>
+      <a href="#contact" class="btn-link center-link">Đăng ký tư vấn miễn phí →</a>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="projects-section" id="projects">
+    <div class="container">
+      <div class="projects-layout">
+        <div class="projects-left">
+          <h2>Dự án<br>tiêu biểu</h2>
+          <p>Khám phá các dự án chuyển đổi số thành công mà chúng tôi đã triển khai cho doanh nghiệp.</p>
+          <a href="#contact" class="btn-primary">LIÊN HỆ NGAY</a>
+        </div>
+        <div class="projects-grid">
+          <div class="project-card">
+            <img src="consulting-illustration.png" alt="Consulting project" />
+            <div class="project-info">
+              <h4>Hệ thống quản lý doanh nghiệp</h4>
+              <p>Nền tảng ERP toàn diện</p>
+            </div>
+          </div>
+          <div class="project-card">
+            <img src="development-illustration.png" alt="Development project" />
+            <div class="project-info">
+              <h4>Ứng dụng mobile đa nền tảng</h4>
+              <p>React Native & Flutter</p>
+            </div>
+          </div>
+          <div class="project-card">
+            <img src="hero-illustration.png" alt="Tech project" />
+            <div class="project-info">
+              <h4>Tích hợp thanh toán & API</h4>
+              <p>Fintech Solutions</p>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </div>
+  </section>
 
-      <!-- contact -->
-      <section id="contact" style="padding:28px 0">
-        <h3>Liên hệ</h3>
-        <p style="color:var(--muted)">Gửi email cho chúng tôi — chúng tôi sẽ phản hồi sớm.</p>
+  <!-- TECH TOOLS -->
+  <section class="tools-section">
+    <div class="container">
+      <h2>Công nghệ chúng tôi sử dụng</h2>
+      <div class="tools-grid">
+        <div class="tool-item">React</div>
+        <div class="tool-item">Node.js</div>
+        <div class="tool-item">Python</div>
+        <div class="tool-item">Flutter</div>
+        <div class="tool-item">AWS</div>
+        <div class="tool-item">Docker</div>
+        <div class="tool-item">PostgreSQL</div>
+        <div class="tool-item">Firebase</div>
+        <div class="tool-item">Next.js</div>
+        <div class="tool-item">TypeScript</div>
+      </div>
+    </div>
+  </section>
 
-        <form style="max-width:720px;margin-top:12px;background:#fff;padding:18px;border-radius:10px;box-shadow:0 6px 18px rgba(10,12,18,0.04);border:1px solid rgba(0,0,0,0.03)">
-          <label style="display:block;margin-bottom:8px;font-weight:600">Họ và tên</label>
-          <input type="text" name="name" placeholder="Tên của bạn" style="width:100%;padding:10px;border:1px solid #e6eaee;border-radius:8px;margin-bottom:12px" />
+  <!-- CONTACT -->
+  <section class="contact-section" id="contact">
+    <div class="container contact-layout">
+      <div class="contact-info">
+        <h2>Bắt đầu hành trình<br>chuyển đổi số</h2>
+        <p>Gửi thông tin, chúng tôi sẽ liên hệ tư vấn trong vòng 24 giờ làm việc.</p>
+        <div class="contact-details">
+          <div class="contact-item">
+            <span class="ci-icon">📧</span>
+            <div><strong>Email</strong><br><a href="mailto:hotro@nextdigi.tech">hotro@nextdigi.tech</a></div>
+          </div>
+          <div class="contact-item">
+            <span class="ci-icon">📞</span>
+            <div><strong>Hotline</strong><br><a href="tel:0395503791">039 550 3791</a></div>
+          </div>
+          <div class="contact-item">
+            <span class="ci-icon">📍</span>
+            <div><strong>Trụ sở</strong><br>TP. Hồ Chí Minh, Việt Nam</div>
+          </div>
+        </div>
+      </div>
+      <form class="contact-form" id="contactForm">
+        <input type="text" name="name" placeholder="Họ và tên" required />
+        <input type="email" name="email" placeholder="Email" required />
+        <input type="tel" name="phone" placeholder="Số điện thoại" />
+        <textarea name="message" rows="4" placeholder="Mô tả nhu cầu của bạn" required></textarea>
+        <button type="submit" class="btn-primary full-width">GỬI YÊU CẦU TƯ VẤN</button>
+      </form>
+    </div>
+  </section>
 
-          <label style="display:block;margin-bottom:8px;font-weight:600">Email</label>
-          <input type="email" name="email" placeholder="email@domain.com" style="width:100%;padding:10px;border:1px solid #e6eaee;border-radius:8px;margin-bottom:12px" />
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <div class="brand">
+          <div class="logo small" aria-hidden="true">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" rx="16" fill="white"/><path d="M14 18h14v64h-14zM30 18l26 30V18h14v54l-26-30v30H30z" fill="url(#g)"/></svg>
+          </div>
+          <span class="brand-name">NEXTBASE VIETNAM</span>
+        </div>
+        <p>CÔNG TY TNHH DỊCH VỤ CÔNG NGHỆ NEXTBASE VIỆT NAM</p>
+      </div>
+      <div class="footer-links">
+        <h4>Dịch vụ</h4>
+        <a href="#services">Tư vấn chiến lược</a>
+        <a href="#services">Thiết kế UX/UI</a>
+        <a href="#services">Phát triển phần mềm</a>
+        <a href="#services">Tích hợp hệ thống</a>
+      </div>
+      <div class="footer-links">
+        <h4>Liên hệ</h4>
+        <a href="mailto:hotro@nextdigi.tech">hotro@nextdigi.tech</a>
+        <a href="tel:0395503791">039 550 3791</a>
+        <a href="#">TP. Hồ Chí Minh</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© <span id="year"></span> NEXTBASE VIETNAM — All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
 
-          <label style="display:block;margin-bottom:8px;font-weight:600">Nội dung</label>
-          <textarea name="message" rows="6" placeholder="Mô tả nhu cầu" style="width:100%;padding:10px;border:1px solid #e6eaee;border-radius:8px;margin-bottom:12px"></textarea>
-
-          <button type="submit" class="btn">Gửi yêu cầu</button>
-        </form>
-      </section>
-
-    </main>
-
-    <footer>
-      <div>© <span id="year"></span> CÔNG TY TNHH DỊCH VỤ CÔNG NGHỆ NEXTBASE VIỆT NAM — All rights reserved.</div>
-      <div>Design &amp; contact: <a href="mailto:hotro@nextdigi.tech">hotro@nextdigi.tech</a></div>
-    </footer>
+  <!-- FLOATING BUTTONS -->
+  <div class="floating-buttons">
+    <a href="tel:0395503791" class="float-btn phone-btn" aria-label="Gọi điện">
+      <span class="pulse-ring"></span>
+      📞
+    </a>
   </div>
 
   <script>
-    // minimal JS
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // simple form handler (no backend) — will open an email
-    document.querySelector('form').addEventListener('submit', function(e){
+    // Mobile menu
+    const hamburger = document.getElementById('hamburger');
+    const nav = document.getElementById('mainNav');
+    hamburger.addEventListener('click', () => {
+      nav.classList.toggle('open');
+      hamburger.classList.toggle('active');
+    });
+    nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      nav.classList.remove('open');
+      hamburger.classList.remove('active');
+    }));
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const t = document.querySelector(a.getAttribute('href'));
+        if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      });
+    });
+
+    // Header scroll effect
+    const header = document.querySelector('.site-header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Intersection Observer for animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    document.querySelectorAll('.stat-card, .award-card, .timeline-item, .project-card, .tool-item').forEach(el => observer.observe(el));
+
+    // Counter animation
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const target = parseInt(el.dataset.target);
+          const suffix = el.textContent.replace(/[0-9]/g, '');
+          let current = 0;
+          const increment = target / 40;
+          const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) { current = target; clearInterval(timer); }
+            el.textContent = Math.floor(current) + suffix;
+          }, 30);
+          counterObserver.unobserve(el);
+        }
+      });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('.stat-number').forEach(el => counterObserver.observe(el));
+
+    // Form handler
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
       e.preventDefault();
-      var name = encodeURIComponent(this.name.value || '');
-      var email = encodeURIComponent(this.email.value || '');
-      var message = encodeURIComponent(this.message.value || '');
-      var subject = encodeURIComponent('Yêu cầu từ website NEXTBASE');
-      var body = 'Tên: '+name+'%0D%0AEmail: '+email+'%0D%0A%0D%0A'+message;
+      const name = encodeURIComponent(this.name.value || '');
+      const email = encodeURIComponent(this.email.value || '');
+      const phone = encodeURIComponent(this.phone.value || '');
+      const message = encodeURIComponent(this.message.value || '');
+      const subject = encodeURIComponent('Yêu cầu tư vấn từ website NEXTBASE');
+      const body = 'Tên: '+name+'%0D%0AEmail: '+email+'%0D%0ASĐT: '+phone+'%0D%0A%0D%0A'+message;
       window.location.href = 'mailto:hotro@nextdigi.tech?subject='+subject+'&body='+body;
     });
   </script>
